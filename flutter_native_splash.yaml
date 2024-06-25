@@ -1,0 +1,9 @@
+flutter_native_splash:
+  image: assets/images/bh_logo.png
+  color: "#FFFFFF"
+  android: true
+  ios: true
+  web: false
+  android_12:
+    image: assets/images/bh_logo.png
+    color: "#FFFFFF"
