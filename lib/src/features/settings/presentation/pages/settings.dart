@@ -17,6 +17,6 @@ class SettingsPage extends ConsumerStatefulWidget {
 class _SettingsPageState extends ConsumerState<SettingsPage> {
   @override
   Widget build(BuildContext context) {
-   return DetailsScreen(label: 'SettingsPage');
+    return DetailsScreen(label: 'SettingsPage');
   }
 }

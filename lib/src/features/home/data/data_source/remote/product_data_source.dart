@@ -1,19 +1,25 @@
 import 'dart:convert';
+import '../../../../../core/shared/data/remote/remote.dart';
+import '../../../../../core/shared/domain/model/either.dart';
+import '../../../../../core/shared/exceptions/http_exception.dart';
+import '../../../../home/data/data_source/remote/product_data_source.dart';
+import '../../../domain/model/product_list_response/product_list_response.dart';
 
-abstract class CategoryWiseNewsDataSource {
-  Future<Either<AppException, CategoryWiseNewsResponseForHome>>
-      fetchCategoryWiseNews({String local = "en", required String category});
+
+abstract class ProductDataSource {
+  Future<Either<AppException, ProductListResponse>>
+      fetchProducts({String local = "en", required String category});
   // Future<Either<AppException, PaginatedResponse>> searchPaginatedProducts(
   //     {required int skip, required String query});
 }
 
-class SliderRemoteDataSource extends CategoryWiseNewsDataSource {
+class SliderRemoteDataSource extends ProductDataSource{
   final NetworkService networkService;
   SliderRemoteDataSource(this.networkService);
 
   @override
-  Future<Either<AppException, CategoryWiseNewsResponseForHome>>
-      fetchCategoryWiseNews(
+  Future<Either<AppException, ProductListResponse>>
+      fetchProducts(
           {String local = "en", required String category}) async {
     final response = await networkService.get(
       '$local/home/$category',
@@ -32,8 +38,8 @@ class SliderRemoteDataSource extends CategoryWiseNewsDataSource {
             ),
           );
         }
-        final paginatedResponse = CategoryWiseNewsResponseForHome.fromJson(
-            jsonData, jsonDecode(jsonEncode(jsonData)));
+        final paginatedResponse = ProductListResponse.fromJson(
+            jsonDecode(jsonEncode(jsonData)));
         return Right(paginatedResponse);
       },
     );

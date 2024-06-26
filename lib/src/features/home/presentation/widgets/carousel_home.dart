@@ -17,7 +17,7 @@ class CarouselHome extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 margin: EdgeInsets.symmetric(horizontal: 5.0),
                 decoration: BoxDecoration(
-                  color:  Colors.purple[100 * (i % 9)],
+                  color: Colors.purple[100 * (i % 9)],
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(

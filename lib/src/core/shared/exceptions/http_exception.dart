@@ -3,7 +3,6 @@ import 'package:equatable/equatable.dart';
 import '../domain/model/either.dart';
 import '../domain/model/response.dart';
 
-
 class AppException implements Exception {
   final String message;
   final int statusCode;

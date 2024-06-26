@@ -1,4 +1,3 @@
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -67,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.all(6),
                     margin: EdgeInsets.all(6),
                     decoration: BoxDecoration(
-                      color:  Colors.pink[100 * (index % 9)],
+                      color: Colors.pink[100 * (index % 9)],
                     ),
                     child: Text(categoryList[index]),
                   );
@@ -85,7 +84,6 @@ class _HomePageState extends State<HomePage> {
           mainAxisSpacing: 10.0,
           crossAxisSpacing: 10.0,
           childAspectRatio: 1.0,
-
         ),
         delegate: SliverChildBuilderDelegate(
           (BuildContext context, int index) {

@@ -10,6 +10,7 @@ import '../../features/home/presentation/pages/home.dart';
 import '../widgets/scaffold_with_navbar.dart';
 import '../../features/cart/presentation/pages/cart.dart';
 import '../../features/settings/presentation/pages/settings.dart';
+
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
 final GlobalKey<NavigatorState> _shellNavigatorKey =
@@ -31,12 +32,14 @@ final GoRouter router = GoRouter(
         GoRoute(
           path: '/',
           builder: (BuildContext context, GoRouterState state) {
-            return  HomePage(title: 'Battery High',key: state.pageKey,);
+            return HomePage(
+              title: 'Battery High',
+              key: state.pageKey,
+            );
           },
           routes: <RouteBase>[
             // The details screen to display stacked on the inner Navigator.
             // This will cover screen A but not the application shell.
-            
           ],
         ),
 
@@ -45,13 +48,12 @@ final GoRouter router = GoRouter(
         GoRoute(
           path: '/cart',
           builder: (BuildContext context, GoRouterState state) {
-            return  CartPage();
+            return CartPage();
           },
           routes: <RouteBase>[
             /// Same as "/a/details", but displayed on the root Navigator by
             /// specifying [parentNavigatorKey]. This will cover both screen B
             /// and the application shell.
-            
           ],
         ),
 
@@ -64,14 +66,9 @@ final GoRouter router = GoRouter(
           routes: <RouteBase>[
             // The details screen to display stacked on the inner Navigator.
             // This will cover screen A but not the application shell.
-          
           ],
         ),
       ],
     ),
   ],
 );
-
-
-
-

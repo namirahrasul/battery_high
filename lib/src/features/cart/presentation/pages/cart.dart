@@ -16,8 +16,6 @@ class CartPage extends ConsumerStatefulWidget {
 class _CartPageState extends ConsumerState<CartPage> {
   @override
   Widget build(BuildContext context) {
-    
     return DetailsScreen(label: 'CartPage');
   }
-
 }

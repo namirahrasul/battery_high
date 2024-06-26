@@ -8,7 +8,6 @@ import '../domain/model/either.dart';
 import '../domain/model/response.dart' as response;
 import '../exceptions/http_exception.dart';
 
-
 mixin ExceptionHandlerMixin on NetworkService {
   Future<Either<AppException, response.Response>>
       handleException<T extends Object>(

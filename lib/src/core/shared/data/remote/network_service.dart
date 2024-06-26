@@ -1,8 +1,6 @@
-
 import '../../domain/model/either.dart';
 import '../../domain/model/response.dart';
 import '../../exceptions/http_exception.dart';
-
 
 abstract class NetworkService {
   String get baseUrl;

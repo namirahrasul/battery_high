@@ -7,6 +7,7 @@ import '../../exceptions/http_exception.dart';
 import '../../globals.dart';
 import '../../mixins/exception_handler_mixin.dart';
 import 'remote.dart';
+
 class DioNetworkService extends NetworkService with ExceptionHandlerMixin {
   final Dio dio;
   DioNetworkService(this.dio) {
